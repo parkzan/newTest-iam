@@ -7,7 +7,6 @@ import { AppmenuComponent } from './conponents/appmenu/appmenu.component';
 import { AppfooterComponent } from './conponents/appfooter/appfooter.component';
 import { PageHomeComponent } from './conponents/page-home/page-home.component';
 import { PageSystemComponent } from './conponents/page-system/page-system.component';
-import { RouterModule,Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
