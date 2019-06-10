@@ -1,0 +1,196 @@
+<div class="pageSystem">
+  <div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            System
+            <small>Manage System</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">System</li>
+          </ol>
+        <!-- <div class="container">
+          <button class="btn btn-primary pull-right"  data-toggle="modal" data-target="#modelAddSystem"> Add </button>
+       </div> -->
+    </section>
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-xs-6">
+              <div class="small-box bg-aqua">
+                  <div class="icon">
+                      <i class="ion ion-person-add icon-wall"></i>
+                  </div>
+                  <div class="row inner">
+                      <div class="col-sm-6 col-md-8">
+                            <h3>{{sysName}}</h3>
+                            <p>{{sysCode}}</p>
+                      </div>
+                      <div class="col-sm-6 col-md-4">
+                          <div class="box-setting">
+                              <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
+                              <a  data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
+                              <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
+                              </ul>
+                           </div>
+                      </div>
+                  </div> 
+                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
+                      Manage System <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
+                      </ul>
+                </div>
+          </div>
+          <div class="col-lg-4 col-xs-6">
+              <div class="small-box bg-aqua">
+                  <div class="icon wall-icons">
+                      <i class="ion ion-person-add"></i>
+                  </div>
+                  <div class="row inner">
+                      <div class="col-sm-12 col-md-12">
+                            <h3>{{[sysName]}}</h3>
+                            <p>{{[sysCode]}}</p>  
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                          <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
+                            </ul>
+                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
+                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
+                      </div>
+                  </div>
+                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
+                      Manage System <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                          <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
+                      </ul>
+                </div>
+          </div>
+          <div class="col-lg-4 col-xs-6">
+              <div class="small-box bg-aqua">
+                  <div class="icon wall-icons">
+                      <i class="ion ion-person-add"></i>
+                  </div>
+                  <div class="row inner">
+                      <div class="col-sm-12 col-md-12">
+                            <h3>{{[sysName]}}</h3>
+                            <p>{{[sysCode]}}</p>  
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                          <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
+                          </ul>
+                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
+                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
+                      </div>
+                  </div>
+                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
+                      Manage System <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
+                      </ul>
+                </div>
+          </div>
+          <div class="col-lg-4 col-xs-6">
+              <div class="small-box bg-aqua">
+                  <div class="icon wall-icons">
+                      <i class="ion ion-person-add"></i>
+                  </div>
+                  <div class="row inner">
+                      <div class="col-sm-12 col-md-12">
+                            <h3>{{[sysName]}}</h3>
+                            <p>{{[sysCode]}}</p>  
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                          <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
+                          </ul>
+                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
+                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
+                      </div>
+                  </div>
+                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
+                      Manage System <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
+                      </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="modal fade" id="modelAddSystem">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">System</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="inputCode" class="col-sm-2 control-label">Code</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" placeholder="Code" [formControl]="code" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName"  class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" placeholder="Name"  [formControl]="name">
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputName"  class="col-sm-2 control-label">Icon</label>
+                  <div class="col-sm-10">
+                    <select class="form-control">
+                      <option>icon 1</option>
+                      <option>icon 2</option>
+                      <option>icon 3</option>
+                      <option>icon 4</option>
+                      <option>icon 5</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#modelAlert">Save</button>
+          <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
