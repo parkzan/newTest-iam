@@ -1,22 +1,26 @@
-<div class="pageSystem">
+<div class="page-main">
   <div class="content-wrapper">
     <section class="content-header">
-        <h1>
+        <!-- <h1>
             System
             <small>Manage System</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">System</li>
-          </ol>
-        <!-- <div class="container">
-          <button class="btn btn-primary pull-right"  data-toggle="modal" data-target="#modelAddSystem"> Add </button>
-       </div> -->
+          </ol>  -->
     </section>
     <section class="content">
       <div class="container">
+        <div class="row" style="margin-bottom: 2%;">
+          <div class="form-group">
+            <div class="col-sm-12 col-md-12 pull-right ">
+                <button class="btn btn-primary pull-right"  data-toggle="modal" data-target="#modelAddSystem"> Add </button>
+            </div>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-lg-4 col-xs-6">
+          <div class="col-sm-6 col-lg-4 col-xs-6 col-md-6">
               <div class="small-box bg-aqua">
                   <div class="icon">
                       <i class="ion ion-person-add icon-wall"></i>
@@ -32,9 +36,9 @@
                               <a  data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
                               <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
+                                <li><a routerLink="/role"><i class="fa fa-user-secret"></i>Role</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
+                                <li><a routerLink="/object"><i class="fa fa-object-ungroup"></i>Object</a></li>   
                               </ul>
                            </div>
                       </div>
@@ -49,15 +53,15 @@
                       </ul>
                 </div>
           </div>
-          <div class="col-lg-4 col-xs-6">
+          <div class="col-sm-6 col-lg-4 col-xs-6 col-md-6" *ngFor="let rusulrSystem of listSystem">
               <div class="small-box bg-aqua">
                   <div class="icon wall-icons">
                       <i class="ion ion-person-add"></i>
                   </div>
                   <div class="row inner">
                       <div class="col-sm-12 col-md-12">
-                            <h3>{{[sysName]}}</h3>
-                            <p>{{[sysCode]}}</p>  
+                            <h3>{{[rusulrSystem.sysName]}}</h3>
+                            <p>{{[rusulrSystem.sysCode]}}</p>  
                       </div>
                       <div class="col-sm-12 col-md-12">
                           <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
@@ -66,8 +70,8 @@
                               <li class="divider"></li>
                               <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
                             </ul>
-                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
-                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
+                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem(rusulrSystem.sysCode,rusulrSystem.sysName)"><i class="fa fa-edit icon-custom"></i></a>
+                          <a (click)="delSystem(rusulrSystem)"><i class="fa fa-trash icon-custom"></i></a>
                       </div>
                   </div>
                   <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
@@ -75,68 +79,6 @@
                     </a>
                     <ul class="dropdown-menu pull-right" role="menu">
                           <li><a href="#"><i class="fa fa-user"></i>User</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
-                      </ul>
-                </div>
-          </div>
-          <div class="col-lg-4 col-xs-6">
-              <div class="small-box bg-aqua">
-                  <div class="icon wall-icons">
-                      <i class="ion ion-person-add"></i>
-                  </div>
-                  <div class="row inner">
-                      <div class="col-sm-12 col-md-12">
-                            <h3>{{[sysName]}}</h3>
-                            <p>{{[sysCode]}}</p>  
-                      </div>
-                      <div class="col-sm-12 col-md-12">
-                          <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
-                          </ul>
-                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
-                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
-                      </div>
-                  </div>
-                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
-                      Manage System <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                    <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a href="#"><i class="fa fa-user"></i>User</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
-                      </ul>
-                </div>
-          </div>
-          <div class="col-lg-4 col-xs-6">
-              <div class="small-box bg-aqua">
-                  <div class="icon wall-icons">
-                      <i class="ion ion-person-add"></i>
-                  </div>
-                  <div class="row inner">
-                      <div class="col-sm-12 col-md-12">
-                            <h3>{{[sysName]}}</h3>
-                            <p>{{[sysCode]}}</p>  
-                      </div>
-                      <div class="col-sm-12 col-md-12">
-                          <a class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-gear icon-custom"></i></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-user-secret"></i>Role</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-object-ungroup"></i>Object</a></li>  
-                          </ul>
-                          <a data-toggle="modal" data-target="#modelAddSystem" (click)="editSystem()"><i class="fa fa-edit icon-custom"></i></a>
-                          <a (click)="delSystem(sysName)"><i class="fa fa-trash icon-custom"></i></a>
-                      </div>
-                  </div>
-                  <a class="small-box-footer dropdown-toggle" data-toggle="dropdown">
-                      Manage System <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                    <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a href="#"><i class="fa fa-user"></i>User</a></li>
                           <li class="divider"></li>
                           <li><a href="#"><i class="fa fa-sitemap"></i>Role Object</a></li>  
                       </ul>
@@ -185,7 +127,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#modelAlert">Save</button>
+          <button type="button" class="btn btn-primary btn-sm">Save</button>
           <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal">Close</button>
 
         </div>

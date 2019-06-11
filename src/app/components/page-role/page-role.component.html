@@ -1,0 +1,85 @@
+<div class="page-main">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+            SystemA
+            <small>Manage Role</small>
+        </h1>
+        </section>
+        <section class="content">
+            <div class="container">
+                <div class="row" style="margin-bottom: 2%;">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#modelAddRole"
+                            (click)="clearFormInput()"> Add
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3" *ngFor="let resultRole of roleList">
+                        <div class="small-box bg-green">
+                            <div class="icon ">
+                                <i class="fa fa-user-secret icon-wall"></i>
+                            </div>
+                            <div class="row inner">
+                                <div class="col-sm-6 col-md-8">
+                                    <h3>{{resultRole.roleCode}}</h3>
+                                    <p>{{resultRole.roleName}}</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="box-setting">
+                                        <a data-toggle="modal" data-target="#modelAddRole"
+                                            (click)="editSystem(resultRole)" class="tagA"><i
+                                                class="fa fa-edit icon-custom icon-setting"></i></a>
+                                        <a (click)=" deleteRole(roleCode)"><i class="fa fa-trash icon-setting"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="#" class="small-box-footer">
+                                <!-- More info <i class="fa fa-arrow-circle-right"></i> --><br>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <div class="modal fade" id="modelAddRole">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Role</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="inputCode" class="col-sm-2 control-label">Code</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="RoleCode"
+                                            [formControl]="roleCodeForm" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="RoldeName"
+                                            [formControl]="roleNameForm" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" (click)="saveRole()"> Save </button>
+                        <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal"> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

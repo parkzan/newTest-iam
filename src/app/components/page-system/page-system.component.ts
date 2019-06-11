@@ -10,6 +10,21 @@ export class PageSystemComponent implements OnInit {
   myTest:any;
   name = new FormControl();
   code = new FormControl();
+  listSystem = [
+    {
+      sysCode:"CRV",
+      sysName:"SystemA"
+    },{
+      sysCode:"SFEF",
+      sysName:"SystemB"
+    },{
+      sysCode:"FES",
+      sysName:"SystemC"
+    },{
+      sysCode:"WEQ",
+      sysName:"SystemD"
+    }
+  ]
   sysName:string = "SystemA";
   sysCode:String = "CRV";
   constructor() {   }
@@ -18,15 +33,16 @@ export class PageSystemComponent implements OnInit {
     
     
   }
-  editSystem(){
-      this.name.setValue(this.sysName);
-      this.code.setValue(this.sysCode);
+  editSystem(code:string,name:string){
+      this.name.setValue(code);
+      this.code.setValue(name);
   }
 
-  delSystem(systemName:String){
+  delSystem(system:any){
+    console.log(system);
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You will not be able to recover this '+systemName,
+      text: 'You will not be able to recover this '+system.sysName,
       type: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, delete it!',
@@ -35,7 +51,7 @@ export class PageSystemComponent implements OnInit {
       if (result.value) {
         Swal.fire(
           'Deleted!',
-          'Your '+systemName+' has been deleted.',
+          'Your '+system.sysName+' has been deleted.',
           'success'
         )
       } else if (result.dismiss === Swal.DismissReason.cancel) {
